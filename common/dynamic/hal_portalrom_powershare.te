@@ -1,0 +1,8 @@
+# HWBinder IPC from client to server
+binder_call(hal_portalrom_powershare_client, hal_portalrom_powershare_server)
+
+add_hwservice(hal_portalrom_powershare_server, hal_portalrom_powershare_hwservice)
+allow hal_portalrom_powershare_client hal_portalrom_powershare_hwservice:hwservice_manager find;
+
+# Allow binder communication with platform_app
+binder_call(hal_portalrom_powershare, platform_app)
